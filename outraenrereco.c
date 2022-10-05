@@ -22,6 +22,4 @@ int main(){
     *p = 500;
     printf("\n p vale: %p",p);
     printf("\n *p vale: %d",*p);
-
-
 }
