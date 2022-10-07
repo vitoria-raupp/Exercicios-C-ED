@@ -22,7 +22,7 @@ int main(){
     //cliente.sexo = 'F';
     //strcpy(cliente.nome, "Vitoria");
 
-    printf("Nome: %s Idade %d \nSexo: %c ", cliente.nome, cliente.idade, cliente.sexo);
+    printf("Nome: %sIdade %d \nSexo: %c ", cliente.nome, cliente.idade, cliente.sexo);
 
 return 0;
 }
