@@ -23,3 +23,5 @@ int main(){
     printf("Nome da Banda: %s Genero Musica: %s Integrantes: %d \n Ranking: %d", rock.nomeBanda,rock.generoMusica,rock.integrantes, rock.ranking);
 
 }
+
+// https://www.cprogressivo.net/2013/03/Exercicios-sobre-structs-em-C.html
