@@ -53,16 +53,15 @@ Ficha_de_aluno Registro(){
 
 int main(){
     int i;
-    Ficha_de_aluno Aluno[2];
+    Ficha_de_aluno Aluno[5];
 
-    for(i = 0; i < 2; i ++){
+    for(i = 0; i < 5; i ++){
         Aluno[i] = Registro();
     }
 
-    for(i = 0; i < 2; i++){
+    for(i = 0; i < 5; i++){
         imprime_ficha(Aluno[i]);
     }
-
 return 0;
 }
 
