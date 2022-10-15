@@ -16,12 +16,11 @@ void imprime_ficha(Ficha_de_aluno Aluno){
     printf(" Nota 1 prova %2.f",Aluno.nota_prova1);
     printf("\n Nota 2 prova %2.f",Aluno.nota_prova2);
     printf("\n Nota 3 prova %2.f \n",Aluno.nota_prova3);
+
+    printf("Média: %2.f ", (Aluno.nota_prova1 + Aluno.nota_prova2 + Aluno.nota_prova3) / 3);
 }
 
-//Ficha_de_aluno Aluno;
-
 Ficha_de_aluno Registro(){
-    //Ficha_de_aluno Aluno;
 
     printf("\n Nome do aluno:");
     fflush(stdin);
@@ -40,16 +39,8 @@ Ficha_de_aluno Registro(){
     printf("\n Nota 3 prova: ");
     scanf("%f", &Aluno.nota_prova3);
 
-    //printf("Alunos Cadastrados: ");
-
-    //imprime_ficha(aluno);
     return Aluno;
 }
-
-//void main(){
-    //Ficha_ode_aluno aluno;
-    //Aluno = Registro();
-    //imprime_ficha(Aluno);}
 
 int main(){
     int i;
@@ -64,4 +55,3 @@ int main(){
     }
 return 0;
 }
-
