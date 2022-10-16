@@ -17,8 +17,9 @@ typedef struct{
 void imprimir(Pessoa p){
     printf("\n Nome: %s", p.nome);
     printf(" Idade: %d", p.idade);
-    printf("Sexo: %c", p.sexo);
+    printf("\n Sexo: %c", p.sexo);
     printf("\n Data de nascimento: %d/%d/%d", p.data.dia, p.data.mes, p.data.ano);
+    printf("\n");
 }
 
 Pessoa LerPessoa(){
