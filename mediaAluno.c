@@ -10,14 +10,14 @@ float cal_media(int quant,float *p){
     return somar/quant;
 }
 
-float cal_variamcia(int quant,float *p){
+float cal_variancia(int quant,float *p, float media){
     int i;
     float soma;
-    float cal_media(media);
+    soma = 0.0;
     for(i=0; i < quant; i ++){
         soma += (p[i] - media) * (p[i] - media);
     }
-    return soma
+    return soma/quant;
 }
 
 main(){
@@ -43,8 +43,10 @@ main(){
     }
 
     media = cal_media(quantidade, ponteiro);
-    printf("Media :%f ", media);
+    printf("Media :%.2f \n", media);
 
-    media = cal_variamcia(quantidade, ponteiro);
-    printf("Variamcia: %f", media);
+    variancia = cal_variancia(quantidade, ponteiro, media);
+    printf("Variancia: %.2f", variancia);
+
+    free(ponteiro);
 }
