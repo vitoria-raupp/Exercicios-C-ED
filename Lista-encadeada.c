@@ -2,7 +2,6 @@
 #include<stdlib.h>
 #include<stddef.h>
 
-
 struct lista{
     int matricula;
     struct lista* proximo;
@@ -34,11 +33,14 @@ void imprime(Lista* l){
     for(p = l; p != NULL; p = p->proximo){
         printf("\n matricula: %d \n", p->matricula);
     }
+    printf("-----------");
 }
+
 // função vazia
+
 int vazia(Lista* l){
     if( l == NULL){
-        return 1;
+        return l;
     }else{
         return 0;}
 // ou  return (1 == NULL);
@@ -49,7 +51,30 @@ int vazia(Lista* l){
 Lista* retira(Lista* l, int v){
      Lista* anterior = NULL; // ponteiro para elemento anterior
      Lista* p = l; // ponteiro percorre lista
+     // procura o elemento na lista, guardando o anterior
+     while(p!= NULL && p->matricula != v){
+        anterior = p;
+        p = p->proximo;
+     }
+      //verifica se achou o elemento
+      if( p == NULL )
+        return l; // não achou
+      if( anterior == NULL ){
+        l = p->proximo; // retira o primeiro
+      }else{
+        anterior->proximo = p->proximo; // retira elemento do meio
+      }
+      free(p);
+      return l;
+}
 
+void libera(Lista* lista){
+    Lista* p = lista;
+    while(p!= NULL){
+        //Lista* temp = p->proximo;
+        free(p);
+        //p = temp;
+    }
 }
 
 int main(void){
@@ -58,5 +83,12 @@ int main(void){
     l = insere(l, 4); // insere elemento 4
     l = insere(l, 8); //insere elemento 8
     imprime(l);
+    l = insere(l, 9);
+    l = insere(l, 10);
+    l = retira(l, 4);
+    imprime(l);
+    libera(l);
+    imprime(l);
+
     return 0;
 }
